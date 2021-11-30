@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0DDCB352756BE4400E5B63A /* CPaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0DDCB342756BE4400E5B63A /* CPaySDK.framework */; };
+		C0DDCB362756BE4400E5B63A /* CPaySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0DDCB342756BE4400E5B63A /* CPaySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C0E19656271F217E008BC85C /* cpaysdkdemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E19655271F217E008BC85C /* cpaysdkdemoApp.swift */; };
 		C0E19658271F217E008BC85C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E19657271F217E008BC85C /* ContentView.swift */; };
 		C0E1965A271F2182008BC85C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E19659271F2182008BC85C /* Assets.xcassets */; };
@@ -36,9 +38,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C0DDCB372756BE4400E5B63A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C0DDCB362756BE4400E5B63A /* CPaySDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		09634F6A96DE3CC2F259E54D /* Pods-cpaysdkdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cpaysdkdemo.debug.xcconfig"; path = "Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo.debug.xcconfig"; sourceTree = "<group>"; };
 		411803B2DBDB688C620BA50F /* Pods-cpaysdkdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cpaysdkdemo.release.xcconfig"; path = "Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo.release.xcconfig"; sourceTree = "<group>"; };
+		C0DDCB30275696A700E5B63A /* CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0DDCB342756BE4400E5B63A /* CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E19652271F217E008BC85C /* cpaysdkdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cpaysdkdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E19655271F217E008BC85C /* cpaysdkdemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cpaysdkdemoApp.swift; sourceTree = "<group>"; };
 		C0E19657271F217E008BC85C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0DDCB352756BE4400E5B63A /* CPaySDK.framework in Frameworks */,
 				FB053938C206DC89F863E8F7 /* Pods_cpaysdkdemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +113,8 @@
 		8FA3B5BEE52D52F79E49CA8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0DDCB342756BE4400E5B63A /* CPaySDK.framework */,
+				C0DDCB30275696A700E5B63A /* CPaySDK.framework */,
 				E0B265C0368D5E715418CFB5 /* Pods_cpaysdkdemo.framework */,
 			);
 			name = Frameworks;
@@ -171,7 +192,8 @@
 				C0E1964E271F217E008BC85C /* Sources */,
 				C0E1964F271F217E008BC85C /* Frameworks */,
 				C0E19650271F217E008BC85C /* Resources */,
-				53F2FE2E61412EFD154A0D9B /* [CP] Embed Pods Frameworks */,
+				C0DDCB372756BE4400E5B63A /* Embed Frameworks */,
+				E7E967AB32B192ADFD616278 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,23 +312,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53F2FE2E61412EFD154A0D9B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E43C25D2E769A5D94B3ADC7A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +332,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7E967AB32B192ADFD616278 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

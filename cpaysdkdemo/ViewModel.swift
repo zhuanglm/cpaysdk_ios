@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import CPay
+import CPaySDK
 
 extension UIWindow {
     static var key: UIWindow? {
@@ -36,6 +37,8 @@ extension Dictionary {
 
 class ViewModel: ObservableObject {
     private var mOrder: CPayOrder = CPayOrder()
+    private var mRequest: CPayRequest = CPayRequest()
+    let paymentMethod = CitconPaymentMethodType.ALI_HK
     @Published var mOrderResult: String = ""
     
     func randomString(_ length: Int) -> String {

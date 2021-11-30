@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0DDCB192756932A00E5B63A /* CPaySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = C0DDCB182756932A00E5B63A /* CPaySDK.docc */; };
+		C0DDCB1F2756932A00E5B63A /* CPaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0DDCB142756932900E5B63A /* CPaySDK.framework */; };
+		C0DDCB242756932A00E5B63A /* CPaySDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DDCB232756932A00E5B63A /* CPaySDKTests.swift */; };
+		C0DDCB252756932A00E5B63A /* CPaySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C0DDCB172756932A00E5B63A /* CPaySDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0DDCB3F2756C0FE00E5B63A /* CitconPaymentMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DDCB3E2756C0FE00E5B63A /* CitconPaymentMethodType.swift */; };
+		C0DDCB412756C10200E5B63A /* CPayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DDCB402756C10200E5B63A /* CPayRequest.swift */; };
+		C5E248F90C5351D28CE5DD0D /* Pods_CPaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C49D86BD034C18ED5EE0D /* Pods_CPaySDK.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0DDCB202756932A00E5B63A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0DDCB0B2756932900E5B63A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0DDCB132756932900E5B63A;
+			remoteInfo = CPaySDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		422B3C23DCB454694D44D415 /* Pods-CPaySDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPaySDK.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-CPaySDK/Pods-CPaySDK.debug.xcconfig"; sourceTree = "<group>"; };
+		7258DDB754A47D17F327C15B /* Pods-CPaySDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPaySDK.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-CPaySDK/Pods-CPaySDK.release.xcconfig"; sourceTree = "<group>"; };
+		C0DDCB142756932900E5B63A /* CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0DDCB172756932A00E5B63A /* CPaySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPaySDK.h; sourceTree = "<group>"; };
+		C0DDCB182756932A00E5B63A /* CPaySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CPaySDK.docc; sourceTree = "<group>"; };
+		C0DDCB1E2756932A00E5B63A /* CPaySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPaySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0DDCB232756932A00E5B63A /* CPaySDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPaySDKTests.swift; sourceTree = "<group>"; };
+		C0DDCB3E2756C0FE00E5B63A /* CitconPaymentMethodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitconPaymentMethodType.swift; sourceTree = "<group>"; };
+		C0DDCB402756C10200E5B63A /* CPayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPayRequest.swift; sourceTree = "<group>"; };
+		FB3C49D86BD034C18ED5EE0D /* Pods_CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0DDCB112756932900E5B63A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E248F90C5351D28CE5DD0D /* Pods_CPaySDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0DDCB1B2756932A00E5B63A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0DDCB1F2756932A00E5B63A /* CPaySDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A979D68F4A8824A3096F003 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB3C49D86BD034C18ED5EE0D /* Pods_CPaySDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0DDCB0A2756932900E5B63A = {
+			isa = PBXGroup;
+			children = (
+				C0DDCB162756932900E5B63A /* CPaySDK */,
+				C0DDCB222756932A00E5B63A /* CPaySDKTests */,
+				C0DDCB152756932900E5B63A /* Products */,
+				EBC9EEE7B127E8C669933FD1 /* Pods */,
+				2A979D68F4A8824A3096F003 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C0DDCB152756932900E5B63A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0DDCB142756932900E5B63A /* CPaySDK.framework */,
+				C0DDCB1E2756932A00E5B63A /* CPaySDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0DDCB162756932900E5B63A /* CPaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				C0DDCB432756C28900E5B63A /* view */,
+				C0DDCB422756C14400E5B63A /* model */,
+				C0DDCB172756932A00E5B63A /* CPaySDK.h */,
+				C0DDCB182756932A00E5B63A /* CPaySDK.docc */,
+			);
+			path = CPaySDK;
+			sourceTree = "<group>";
+		};
+		C0DDCB222756932A00E5B63A /* CPaySDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				C0DDCB232756932A00E5B63A /* CPaySDKTests.swift */,
+			);
+			path = CPaySDKTests;
+			sourceTree = "<group>";
+		};
+		C0DDCB422756C14400E5B63A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C0DDCB3E2756C0FE00E5B63A /* CitconPaymentMethodType.swift */,
+				C0DDCB402756C10200E5B63A /* CPayRequest.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C0DDCB432756C28900E5B63A /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		EBC9EEE7B127E8C669933FD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				422B3C23DCB454694D44D415 /* Pods-CPaySDK.debug.xcconfig */,
+				7258DDB754A47D17F327C15B /* Pods-CPaySDK.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C0DDCB0F2756932900E5B63A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0DDCB252756932A00E5B63A /* CPaySDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C0DDCB132756932900E5B63A /* CPaySDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0DDCB282756932A00E5B63A /* Build configuration list for PBXNativeTarget "CPaySDK" */;
+			buildPhases = (
+				57DE747BD57DAD4F1FE0D562 /* [CP] Check Pods Manifest.lock */,
+				C0DDCB0F2756932900E5B63A /* Headers */,
+				C0DDCB102756932900E5B63A /* Sources */,
+				C0DDCB112756932900E5B63A /* Frameworks */,
+				C0DDCB122756932900E5B63A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CPaySDK;
+			productName = CPaySDK;
+			productReference = C0DDCB142756932900E5B63A /* CPaySDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C0DDCB1D2756932A00E5B63A /* CPaySDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0DDCB2B2756932A00E5B63A /* Build configuration list for PBXNativeTarget "CPaySDKTests" */;
+			buildPhases = (
+				C0DDCB1A2756932A00E5B63A /* Sources */,
+				C0DDCB1B2756932A00E5B63A /* Frameworks */,
+				C0DDCB1C2756932A00E5B63A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0DDCB212756932A00E5B63A /* PBXTargetDependency */,
+			);
+			name = CPaySDKTests;
+			productName = CPaySDKTests;
+			productReference = C0DDCB1E2756932A00E5B63A /* CPaySDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0DDCB0B2756932900E5B63A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					C0DDCB132756932900E5B63A = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					C0DDCB1D2756932A00E5B63A = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = C0DDCB0E2756932900E5B63A /* Build configuration list for PBXProject "CPaySDK" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0DDCB0A2756932900E5B63A;
+			productRefGroup = C0DDCB152756932900E5B63A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0DDCB132756932900E5B63A /* CPaySDK */,
+				C0DDCB1D2756932A00E5B63A /* CPaySDKTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0DDCB122756932900E5B63A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0DDCB1C2756932A00E5B63A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57DE747BD57DAD4F1FE0D562 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CPaySDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0DDCB102756932900E5B63A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0DDCB3F2756C0FE00E5B63A /* CitconPaymentMethodType.swift in Sources */,
+				C0DDCB412756C10200E5B63A /* CPayRequest.swift in Sources */,
+				C0DDCB192756932A00E5B63A /* CPaySDK.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0DDCB1A2756932A00E5B63A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0DDCB242756932A00E5B63A /* CPaySDKTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0DDCB212756932A00E5B63A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0DDCB132756932900E5B63A /* CPaySDK */;
+			targetProxy = C0DDCB202756932A00E5B63A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C0DDCB262756932A00E5B63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C0DDCB272756932A00E5B63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C0DDCB292756932A00E5B63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 422B3C23DCB454694D44D415 /* Pods-CPaySDK.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K2S7RKVU3S;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citcon.CPaySDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0DDCB2A2756932A00E5B63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7258DDB754A47D17F327C15B /* Pods-CPaySDK.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K2S7RKVU3S;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citcon.CPaySDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C0DDCB2C2756932A00E5B63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K2S7RKVU3S;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citcon.CPaySDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0DDCB2D2756932A00E5B63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K2S7RKVU3S;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citcon.CPaySDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0DDCB0E2756932900E5B63A /* Build configuration list for PBXProject "CPaySDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0DDCB262756932A00E5B63A /* Debug */,
+				C0DDCB272756932A00E5B63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0DDCB282756932A00E5B63A /* Build configuration list for PBXNativeTarget "CPaySDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0DDCB292756932A00E5B63A /* Debug */,
+				C0DDCB2A2756932A00E5B63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0DDCB2B2756932A00E5B63A /* Build configuration list for PBXNativeTarget "CPaySDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0DDCB2C2756932A00E5B63A /* Debug */,
+				C0DDCB2D2756932A00E5B63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0DDCB0B2756932900E5B63A /* Project object */;
+}

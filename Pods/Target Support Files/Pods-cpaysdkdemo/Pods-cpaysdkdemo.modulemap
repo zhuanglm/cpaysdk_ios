@@ -1,0 +1,6 @@
+framework module Pods_cpaysdkdemo {
+  umbrella header "Pods-cpaysdkdemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
