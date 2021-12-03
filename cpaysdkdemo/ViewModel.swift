@@ -57,6 +57,13 @@ class ViewModel: ObservableObject {
         return randomString
     }
     
+    func startTestView() {
+        if let keyWindow = UIWindow.key {
+            mRequest.startView(keyWindow.rootViewController!)
+        }
+    
+    }
+    
     private func setupSDK(token: String, mode: Int) {
         CPayManager.setupTokenKey(token)
         CPayManager.setupMode(CPayMode.init(rawValue: mode) ?? CPayMode.UAT)
@@ -82,6 +89,7 @@ class ViewModel: ObservableObject {
         CPayManager.request(mOrder) { result in
             self.mOrderResult = result?.message ?? "" + String(result?.resultStatus ?? 0)
         }
+        
     }
     
     @objc func onOrderComplete(_ notification: NSNotification) {

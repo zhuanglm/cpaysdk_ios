@@ -10,8 +10,15 @@ import CPay
 
 public class CPayRequest {
     private var mOrder: CPayOrder = CPayOrder()
+    let mViewController = NextViewController()
     
     public init() {
-        
+    
+    }
+    
+    public func startView(_ viewController: UIViewController) {
+        viewController.present(mViewController, animated: false) {
+            
+        }
     }
 }

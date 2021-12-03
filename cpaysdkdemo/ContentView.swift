@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CPaySDK
 
 struct ContentView: View {
     @State var envIndex: Int = 1
@@ -20,6 +21,8 @@ struct ContentView: View {
     @State var vendorIndex: Int = 0
     @State var allowDuplicate = true
     @StateObject var viewModel = ViewModel()
+    
+    @State private var isPresented = false
     
     private var tokens = ["52A92BB2E055434DBAC0CC4585C242B2",
                           "XYIL2W9BCQSTNN1CXUQ6WEH9JQYZ3VLM",
@@ -173,6 +176,17 @@ struct ContentView: View {
                             .cornerRadius(25)
                     }.padding()
                     
+//                    Button("ttt") {
+//                                self.isPresented = true
+//                            }.fullScreen(isPresented: $isPresented, content: {
+//                                NextView()
+//                            })
+                    Button(action: {
+                        viewModel.startTestView()
+                    }) {
+                        Text("test view")
+                    }
+                    
                     Text("result").padding(.leading)
                     
                     Text(viewModel.mOrderResult).multilineTextAlignment(.leading)
@@ -196,6 +210,8 @@ struct ContentView: View {
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
