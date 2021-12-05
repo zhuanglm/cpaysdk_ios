@@ -37,7 +37,7 @@ extension Dictionary {
 
 class ViewModel: ObservableObject {
     private var mOrder: CPayOrder = CPayOrder()
-    private var mRequest: CPayRequest = CPayRequest()
+
     let paymentMethod = CitconPaymentMethodType.ALI_HK
     @Published var mOrderResult: String = ""
     
@@ -58,8 +58,15 @@ class ViewModel: ObservableObject {
     }
     
     func startTestView() {
+        let cpayReq: CPayRequest = CPayBuilder()
+            .amount("100")
+            .reference("123456789")
+            .build(type: paymentMethod)
+        
         if let keyWindow = UIWindow.key {
-            mRequest.startView(keyWindow.rootViewController!)
+            cpayReq.start(keyWindow.rootViewController!) { retVal in
+                print("return: \(retVal.result)\n")
+            }
         }
     
     }
@@ -89,6 +96,11 @@ class ViewModel: ObservableObject {
         CPayManager.request(mOrder) { result in
             self.mOrderResult = result?.message ?? "" + String(result?.resultStatus ?? 0)
         }
+        
+        let cpayReq: CPayRequest = CPayBuilder()
+            .amount(String(amount))
+            .reference(reference)
+            .build(type: paymentMethod)
         
     }
     

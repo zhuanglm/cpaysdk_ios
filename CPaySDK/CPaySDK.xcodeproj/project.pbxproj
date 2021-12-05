@@ -15,6 +15,7 @@
 		C0DDCB412756C10200E5B63A /* CPayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DDCB402756C10200E5B63A /* CPayRequest.swift */; };
 		C0DDCB452756E22C00E5B63A /* NextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DDCB442756E22C00E5B63A /* NextView.swift */; };
 		C0DDCB47275946A200E5B63A /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DDCB46275946A200E5B63A /* NextViewController.swift */; };
+		C0DDCB49275A9EB300E5B63A /* CPayResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DDCB48275A9EB300E5B63A /* CPayResult.swift */; };
 		C5E248F90C5351D28CE5DD0D /* Pods_CPaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3C49D86BD034C18ED5EE0D /* Pods_CPaySDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		C0DDCB402756C10200E5B63A /* CPayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPayRequest.swift; sourceTree = "<group>"; };
 		C0DDCB442756E22C00E5B63A /* NextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextView.swift; sourceTree = "<group>"; };
 		C0DDCB46275946A200E5B63A /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		C0DDCB48275A9EB300E5B63A /* CPayResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPayResult.swift; sourceTree = "<group>"; };
 		FB3C49D86BD034C18ED5EE0D /* Pods_CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 			children = (
 				C0DDCB3E2756C0FE00E5B63A /* CitconPaymentMethodType.swift */,
 				C0DDCB402756C10200E5B63A /* CPayRequest.swift */,
+				C0DDCB48275A9EB300E5B63A /* CPayResult.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				C0DDCB47275946A200E5B63A /* NextViewController.swift in Sources */,
 				C0DDCB3F2756C0FE00E5B63A /* CitconPaymentMethodType.swift in Sources */,
 				C0DDCB412756C10200E5B63A /* CPayRequest.swift in Sources */,
+				C0DDCB49275A9EB300E5B63A /* CPayResult.swift in Sources */,
 				C0DDCB192756932A00E5B63A /* CPaySDK.docc in Sources */,
 				C0DDCB452756E22C00E5B63A /* NextView.swift in Sources */,
 			);

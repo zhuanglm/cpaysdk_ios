@@ -35,7 +35,7 @@ struct ContentView: View {
     
     private var currencies = ["USD", "CNY", "CAD", "HKD", "KRW", "IDR"]
     
-    private var vendors = ["upop", "wechatpay", "alipay", "kakaopay", "dana", "alipay_hk"]
+    private var vendors = ["upop", "wechatpay", "alipay", "alipay_hk", "kakaopay", "dana"]
     
     
     enum ENV: Int, CaseIterable, Identifiable {

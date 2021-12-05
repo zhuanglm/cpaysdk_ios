@@ -8,12 +8,29 @@
 import UIKit
 import SwiftUI
 
+protocol ReturnValDelegate {
+    func sendVal(_ result: CPayResult)
+}
+
 class NextViewController: UIViewController {
+    var returnDelegate: ReturnValDelegate?
+    var paymentMethod: CitconPaymentMethodType
+    var nextView: NextView
+    
+    init(method: CitconPaymentMethodType) {
+        paymentMethod = CitconPaymentMethodType.NONE
+        nextView = NextView(method: paymentMethod)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let nextView = NextView()
         let nextViewController = UIHostingController(rootView: nextView)
         let subView = nextViewController.view
         
@@ -23,8 +40,17 @@ class NextViewController: UIViewController {
         addChild(nextViewController)
         nextViewController.didMove(toParent: self)
         view.addSubview(nextViewController.view)
-
         
+        if(returnDelegate != nil) {
+            //returnDelegate?.sendVal(message: "zlm loaded")
+        }
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if(returnDelegate != nil) {
+            returnDelegate?.sendVal(nextView.result)
+        }
     }
 
 }

@@ -12,20 +12,30 @@ public struct NextView: View {
     
     @State private var opacity = 0.5
     
-    public init() {
-        
+    private var paymentMethod: CitconPaymentMethodType
+    var result: CPayResult
+    
+    public init(method: CitconPaymentMethodType) {
+        self.paymentMethod = method
+        result = CPayResult("")
     }
-
+    
     public var body: some View {
         ZStack {
             Color.black
                 .opacity(opacity)
                 .edgesIgnoringSafeArea(.all)
             
-            Slider(value: $opacity, in: 0...1)
-                .padding()
-            
-            
+            VStack {
+                Slider(value: $opacity, in: 0...1)
+                    .padding()
+                
+                Button("Done") {
+                    let value = opacity as Double
+                    result.result = "payment: \(self.paymentMethod) value: \(value)"
+                    presentationMode.wrappedValue.dismiss()
+                }.padding()
+            }
         }
     }
 }

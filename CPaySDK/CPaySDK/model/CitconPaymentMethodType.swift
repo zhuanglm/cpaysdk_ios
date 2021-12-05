@@ -8,9 +8,12 @@
 import Foundation
 
 public enum CitconPaymentMethodType {
+    case UPOP
+    case WECHAT
     case ALI
     case ALI_HK
-    case WECHAT
+    case KAKAO
+    case DANA
     case UNKNOWN
     case NONE
 }
