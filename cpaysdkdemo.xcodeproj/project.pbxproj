@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C0DDCB352756BE4400E5B63A /* CPaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0DDCB342756BE4400E5B63A /* CPaySDK.framework */; };
-		C0DDCB362756BE4400E5B63A /* CPaySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0DDCB342756BE4400E5B63A /* CPaySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3248B7ECDA8D940BB331A219 /* Pods_cpaysdkdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3675B4FEB700FAB8050C868 /* Pods_cpaysdkdemo.framework */; };
+		77796A99EFBD1C91B8A61085 /* Pods_CPaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DD11F21230DCB3F5FDA049 /* Pods_CPaySDK.framework */; };
+		C0171F54276117E100DB2365 /* CPayMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F53276117E100DB2365 /* CPayMethodType.swift */; };
+		C0171F56276117F500DB2365 /* CPayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F55276117F500DB2365 /* CPayRequest.swift */; };
+		C0171F582761181800DB2365 /* CPayENVMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F572761181800DB2365 /* CPayENVMode.swift */; };
+		C0171F5A276118CB00DB2365 /* CPayResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F59276118CB00DB2365 /* CPayResult.swift */; };
+		C0171F5C276118EC00DB2365 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F5B276118EC00DB2365 /* NextViewController.swift */; };
+		C0171F5E276118F300DB2365 /* PortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F5D276118F300DB2365 /* PortalView.swift */; };
+		C03F8A30276115DD000533D3 /* CPaySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = C03F8A2F276115DD000533D3 /* CPaySDK.docc */; };
+		C03F8A36276115DD000533D3 /* CPaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F8A2C276115DD000533D3 /* CPaySDK.framework */; };
+		C03F8A3D276115DD000533D3 /* CPaySDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F8A3C276115DD000533D3 /* CPaySDKTests.swift */; };
+		C03F8A3E276115DD000533D3 /* CPaySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C03F8A2E276115DD000533D3 /* CPaySDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C03F8A41276115DD000533D3 /* CPaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F8A2C276115DD000533D3 /* CPaySDK.framework */; };
+		C03F8A42276115DD000533D3 /* CPaySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C03F8A2C276115DD000533D3 /* CPaySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C0E19656271F217E008BC85C /* cpaysdkdemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E19655271F217E008BC85C /* cpaysdkdemoApp.swift */; };
 		C0E19658271F217E008BC85C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E19657271F217E008BC85C /* ContentView.swift */; };
 		C0E1965A271F2182008BC85C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E19659271F2182008BC85C /* Assets.xcassets */; };
@@ -18,10 +30,30 @@
 		C0E19673271F2182008BC85C /* cpaysdkdemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E19672271F2182008BC85C /* cpaysdkdemoUITestsLaunchTests.swift */; };
 		C0E196812721FC48008BC85C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0E196832721FC48008BC85C /* Localizable.strings */; };
 		C0E196862722360E008BC85C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E196852722360D008BC85C /* ViewModel.swift */; };
-		FB053938C206DC89F863E8F7 /* Pods_cpaysdkdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B265C0368D5E715418CFB5 /* Pods_cpaysdkdemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C03F8A37276115DD000533D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0E1964A271F217E008BC85C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C03F8A2B276115DD000533D3;
+			remoteInfo = CPaySDK;
+		};
+		C03F8A39276115DD000533D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0E1964A271F217E008BC85C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0E19651271F217E008BC85C;
+			remoteInfo = cpaysdkdemo;
+		};
+		C03F8A3F276115DD000533D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0E1964A271F217E008BC85C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C03F8A2B276115DD000533D3;
+			remoteInfo = CPaySDK;
+		};
 		C0E19663271F2182008BC85C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C0E1964A271F217E008BC85C /* Project object */;
@@ -45,7 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C0DDCB362756BE4400E5B63A /* CPaySDK.framework in Embed Frameworks */,
+				C03F8A42276115DD000533D3 /* CPaySDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,9 +86,21 @@
 
 /* Begin PBXFileReference section */
 		09634F6A96DE3CC2F259E54D /* Pods-cpaysdkdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cpaysdkdemo.debug.xcconfig"; path = "Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo.debug.xcconfig"; sourceTree = "<group>"; };
+		323820124127462E570BA256 /* Pods-CPaySDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPaySDK.release.xcconfig"; path = "Target Support Files/Pods-CPaySDK/Pods-CPaySDK.release.xcconfig"; sourceTree = "<group>"; };
 		411803B2DBDB688C620BA50F /* Pods-cpaysdkdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cpaysdkdemo.release.xcconfig"; path = "Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo.release.xcconfig"; sourceTree = "<group>"; };
-		C0DDCB30275696A700E5B63A /* CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0DDCB342756BE4400E5B63A /* CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4400D5133085431928294B7D /* Pods-CPaySDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPaySDK.debug.xcconfig"; path = "Target Support Files/Pods-CPaySDK/Pods-CPaySDK.debug.xcconfig"; sourceTree = "<group>"; };
+		A3675B4FEB700FAB8050C868 /* Pods_cpaysdkdemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cpaysdkdemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0171F53276117E100DB2365 /* CPayMethodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPayMethodType.swift; sourceTree = "<group>"; };
+		C0171F55276117F500DB2365 /* CPayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPayRequest.swift; sourceTree = "<group>"; };
+		C0171F572761181800DB2365 /* CPayENVMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPayENVMode.swift; sourceTree = "<group>"; };
+		C0171F59276118CB00DB2365 /* CPayResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPayResult.swift; sourceTree = "<group>"; };
+		C0171F5B276118EC00DB2365 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		C0171F5D276118F300DB2365 /* PortalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalView.swift; sourceTree = "<group>"; };
+		C03F8A2C276115DD000533D3 /* CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C03F8A2E276115DD000533D3 /* CPaySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPaySDK.h; sourceTree = "<group>"; };
+		C03F8A2F276115DD000533D3 /* CPaySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CPaySDK.docc; sourceTree = "<group>"; };
+		C03F8A35276115DD000533D3 /* CPaySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPaySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C03F8A3C276115DD000533D3 /* CPaySDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPaySDKTests.swift; sourceTree = "<group>"; };
 		C0E19652271F217E008BC85C /* cpaysdkdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cpaysdkdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E19655271F217E008BC85C /* cpaysdkdemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cpaysdkdemoApp.swift; sourceTree = "<group>"; };
 		C0E19657271F217E008BC85C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,16 +115,32 @@
 		C0E196842721FC58008BC85C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C0E196852722360D008BC85C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C0ECF8FC2729AEE100FDE765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		E0B265C0368D5E715418CFB5 /* Pods_cpaysdkdemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cpaysdkdemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2DD11F21230DCB3F5FDA049 /* Pods_CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C03F8A29276115DD000533D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77796A99EFBD1C91B8A61085 /* Pods_CPaySDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C03F8A32276115DD000533D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C03F8A36276115DD000533D3 /* CPaySDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0E1964F271F217E008BC85C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0DDCB352756BE4400E5B63A /* CPaySDK.framework in Frameworks */,
-				FB053938C206DC89F863E8F7 /* Pods_cpaysdkdemo.framework in Frameworks */,
+				C03F8A41276115DD000533D3 /* CPaySDK.framework in Frameworks */,
+				3248B7ECDA8D940BB331A219 /* Pods_cpaysdkdemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +166,8 @@
 			children = (
 				09634F6A96DE3CC2F259E54D /* Pods-cpaysdkdemo.debug.xcconfig */,
 				411803B2DBDB688C620BA50F /* Pods-cpaysdkdemo.release.xcconfig */,
+				4400D5133085431928294B7D /* Pods-CPaySDK.debug.xcconfig */,
+				323820124127462E570BA256 /* Pods-CPaySDK.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -113,11 +175,49 @@
 		8FA3B5BEE52D52F79E49CA8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0DDCB342756BE4400E5B63A /* CPaySDK.framework */,
-				C0DDCB30275696A700E5B63A /* CPaySDK.framework */,
-				E0B265C0368D5E715418CFB5 /* Pods_cpaysdkdemo.framework */,
+				E2DD11F21230DCB3F5FDA049 /* Pods_CPaySDK.framework */,
+				A3675B4FEB700FAB8050C868 /* Pods_cpaysdkdemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0171F51276117A700DB2365 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C0171F5D276118F300DB2365 /* PortalView.swift */,
+				C0171F5B276118EC00DB2365 /* NextViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		C0171F52276117AE00DB2365 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C0171F59276118CB00DB2365 /* CPayResult.swift */,
+				C0171F572761181800DB2365 /* CPayENVMode.swift */,
+				C0171F55276117F500DB2365 /* CPayRequest.swift */,
+				C0171F53276117E100DB2365 /* CPayMethodType.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C03F8A2D276115DD000533D3 /* CPaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				C0171F52276117AE00DB2365 /* model */,
+				C0171F51276117A700DB2365 /* view */,
+				C03F8A2E276115DD000533D3 /* CPaySDK.h */,
+				C03F8A2F276115DD000533D3 /* CPaySDK.docc */,
+			);
+			path = CPaySDK;
+			sourceTree = "<group>";
+		};
+		C03F8A3B276115DD000533D3 /* CPaySDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				C03F8A3C276115DD000533D3 /* CPaySDKTests.swift */,
+			);
+			path = CPaySDKTests;
 			sourceTree = "<group>";
 		};
 		C0E19649271F217E008BC85C = {
@@ -126,6 +226,8 @@
 				C0E19654271F217E008BC85C /* cpaysdkdemo */,
 				C0E19665271F2182008BC85C /* cpaysdkdemoTests */,
 				C0E1966F271F2182008BC85C /* cpaysdkdemoUITests */,
+				C03F8A2D276115DD000533D3 /* CPaySDK */,
+				C03F8A3B276115DD000533D3 /* CPaySDKTests */,
 				C0E19653271F217E008BC85C /* Products */,
 				02AF68D6D447C47CFB0A9B0B /* Pods */,
 				8FA3B5BEE52D52F79E49CA8B /* Frameworks */,
@@ -138,6 +240,8 @@
 				C0E19652271F217E008BC85C /* cpaysdkdemo.app */,
 				C0E19662271F2182008BC85C /* cpaysdkdemoTests.xctest */,
 				C0E1966C271F2182008BC85C /* cpaysdkdemoUITests.xctest */,
+				C03F8A2C276115DD000533D3 /* CPaySDK.framework */,
+				C03F8A35276115DD000533D3 /* CPaySDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,7 +287,56 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		C03F8A27276115DD000533D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C03F8A3E276115DD000533D3 /* CPaySDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		C03F8A2B276115DD000533D3 /* CPaySDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C03F8A43276115DD000533D3 /* Build configuration list for PBXNativeTarget "CPaySDK" */;
+			buildPhases = (
+				918318608D33A8361175B776 /* [CP] Check Pods Manifest.lock */,
+				C03F8A27276115DD000533D3 /* Headers */,
+				C03F8A28276115DD000533D3 /* Sources */,
+				C03F8A29276115DD000533D3 /* Frameworks */,
+				C03F8A2A276115DD000533D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CPaySDK;
+			productName = CPaySDK;
+			productReference = C03F8A2C276115DD000533D3 /* CPaySDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C03F8A34276115DD000533D3 /* CPaySDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C03F8A46276115DD000533D3 /* Build configuration list for PBXNativeTarget "CPaySDKTests" */;
+			buildPhases = (
+				C03F8A31276115DD000533D3 /* Sources */,
+				C03F8A32276115DD000533D3 /* Frameworks */,
+				C03F8A33276115DD000533D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C03F8A38276115DD000533D3 /* PBXTargetDependency */,
+				C03F8A3A276115DD000533D3 /* PBXTargetDependency */,
+			);
+			name = CPaySDKTests;
+			productName = CPaySDKTests;
+			productReference = C03F8A35276115DD000533D3 /* CPaySDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C0E19651271F217E008BC85C /* cpaysdkdemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0E19676271F2182008BC85C /* Build configuration list for PBXNativeTarget "cpaysdkdemo" */;
@@ -193,11 +346,12 @@
 				C0E1964F271F217E008BC85C /* Frameworks */,
 				C0E19650271F217E008BC85C /* Resources */,
 				C0DDCB372756BE4400E5B63A /* Embed Frameworks */,
-				E7E967AB32B192ADFD616278 /* [CP] Embed Pods Frameworks */,
+				CC121B63A94F7C5D532AB1E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C03F8A40276115DD000533D3 /* PBXTargetDependency */,
 			);
 			name = cpaysdkdemo;
 			productName = cpaysdkdemo;
@@ -247,9 +401,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					C03F8A2B276115DD000533D3 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					C03F8A34276115DD000533D3 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = C0E19651271F217E008BC85C;
+					};
 					C0E19651271F217E008BC85C = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -280,11 +441,27 @@
 				C0E19651271F217E008BC85C /* cpaysdkdemo */,
 				C0E19661271F2182008BC85C /* cpaysdkdemoTests */,
 				C0E1966B271F2182008BC85C /* cpaysdkdemoUITests */,
+				C03F8A2B276115DD000533D3 /* CPaySDK */,
+				C03F8A34276115DD000533D3 /* CPaySDKTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C03F8A2A276115DD000533D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C03F8A33276115DD000533D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0E19650271F217E008BC85C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +489,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		918318608D33A8361175B776 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CPaySDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC121B63A94F7C5D532AB1E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E43C25D2E769A5D94B3ADC7A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,26 +550,31 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E7E967AB32B192ADFD616278 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C03F8A28276115DD000533D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0171F5E276118F300DB2365 /* PortalView.swift in Sources */,
+				C0171F5A276118CB00DB2365 /* CPayResult.swift in Sources */,
+				C0171F5C276118EC00DB2365 /* NextViewController.swift in Sources */,
+				C03F8A30276115DD000533D3 /* CPaySDK.docc in Sources */,
+				C0171F54276117E100DB2365 /* CPayMethodType.swift in Sources */,
+				C0171F56276117F500DB2365 /* CPayRequest.swift in Sources */,
+				C0171F582761181800DB2365 /* CPayENVMode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C03F8A31276115DD000533D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C03F8A3D276115DD000533D3 /* CPaySDKTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0E1964E271F217E008BC85C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,6 +605,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C03F8A38276115DD000533D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C03F8A2B276115DD000533D3 /* CPaySDK */;
+			targetProxy = C03F8A37276115DD000533D3 /* PBXContainerItemProxy */;
+		};
+		C03F8A3A276115DD000533D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0E19651271F217E008BC85C /* cpaysdkdemo */;
+			targetProxy = C03F8A39276115DD000533D3 /* PBXContainerItemProxy */;
+		};
+		C03F8A40276115DD000533D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C03F8A2B276115DD000533D3 /* CPaySDK */;
+			targetProxy = C03F8A3F276115DD000533D3 /* PBXContainerItemProxy */;
+		};
 		C0E19664271F2182008BC85C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C0E19651271F217E008BC85C /* cpaysdkdemo */;
@@ -409,6 +645,118 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C03F8A44276115DD000533D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4400D5133085431928294B7D /* Pods-CPaySDK.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K2S7RKVU3S;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citcon.CPaySDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C03F8A45276115DD000533D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 323820124127462E570BA256 /* Pods-CPaySDK.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K2S7RKVU3S;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citcon.CPaySDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C03F8A47276115DD000533D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K2S7RKVU3S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citcon.CPaySDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cpaysdkdemo.app/cpaysdkdemo";
+			};
+			name = Debug;
+		};
+		C03F8A48276115DD000533D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K2S7RKVU3S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citcon.CPaySDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cpaysdkdemo.app/cpaysdkdemo";
+			};
+			name = Release;
+		};
 		C0E19674271F2182008BC85C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -460,7 +808,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -515,7 +863,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -529,6 +877,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 09634F6A96DE3CC2F259E54D /* Pods-cpaysdkdemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,6 +910,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 411803B2DBDB688C620BA50F /* Pods-cpaysdkdemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -688,6 +1038,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C03F8A43276115DD000533D3 /* Build configuration list for PBXNativeTarget "CPaySDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C03F8A44276115DD000533D3 /* Debug */,
+				C03F8A45276115DD000533D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C03F8A46276115DD000533D3 /* Build configuration list for PBXNativeTarget "CPaySDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C03F8A47276115DD000533D3 /* Debug */,
+				C03F8A48276115DD000533D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C0E1964D271F217E008BC85C /* Build configuration list for PBXProject "cpaysdkdemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

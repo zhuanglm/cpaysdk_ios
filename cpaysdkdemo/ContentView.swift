@@ -174,11 +174,6 @@ struct ContentView: View {
 //                            }.fullScreen(isPresented: $isPresented, content: {
 //                                NextView()
 //                            })
-                    Button(action: {
-                        viewModel.startTestView()
-                    }) {
-                        Text("test view")
-                    }
                     
                     Text("result").padding(.leading)
                     

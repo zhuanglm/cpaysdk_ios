@@ -56,20 +56,6 @@ class ViewModel: ObservableObject {
         return randomString
     }
     
-    func startTestView() {
-        let cpayReq: CPayRequest = CPayBuilder()
-            .amount("100")
-            .reference("123456789")
-            .build(type: paymentMethod)
-        
-        if let keyWindow = UIWindow.key {
-            cpayReq.start(keyWindow.rootViewController!) { retVal in
-                print("return: \(retVal.result)\n")
-            }
-        }
-    
-    }
-    
 //    private func setupSDK(token: String, mode: Int) {
 //        CPayManager.setupTokenKey(token)
 //        CPayManager.setupMode(CPayMode.init(rawValue: mode) ?? CPayMode.UAT)
