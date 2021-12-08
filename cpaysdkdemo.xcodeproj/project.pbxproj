@@ -13,8 +13,9 @@
 		C0171F56276117F500DB2365 /* CPayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F55276117F500DB2365 /* CPayRequest.swift */; };
 		C0171F582761181800DB2365 /* CPayENVMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F572761181800DB2365 /* CPayENVMode.swift */; };
 		C0171F5A276118CB00DB2365 /* CPayResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F59276118CB00DB2365 /* CPayResult.swift */; };
-		C0171F5C276118EC00DB2365 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F5B276118EC00DB2365 /* NextViewController.swift */; };
+		C0171F5C276118EC00DB2365 /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F5B276118EC00DB2365 /* PortalViewController.swift */; };
 		C0171F5E276118F300DB2365 /* PortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F5D276118F300DB2365 /* PortalView.swift */; };
+		C0171F602761214B00DB2365 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0171F5F2761214B00DB2365 /* PortalViewModel.swift */; };
 		C03F8A30276115DD000533D3 /* CPaySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = C03F8A2F276115DD000533D3 /* CPaySDK.docc */; };
 		C03F8A36276115DD000533D3 /* CPaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03F8A2C276115DD000533D3 /* CPaySDK.framework */; };
 		C03F8A3D276115DD000533D3 /* CPaySDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03F8A3C276115DD000533D3 /* CPaySDKTests.swift */; };
@@ -94,8 +95,9 @@
 		C0171F55276117F500DB2365 /* CPayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPayRequest.swift; sourceTree = "<group>"; };
 		C0171F572761181800DB2365 /* CPayENVMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPayENVMode.swift; sourceTree = "<group>"; };
 		C0171F59276118CB00DB2365 /* CPayResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPayResult.swift; sourceTree = "<group>"; };
-		C0171F5B276118EC00DB2365 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		C0171F5B276118EC00DB2365 /* PortalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalViewController.swift; sourceTree = "<group>"; };
 		C0171F5D276118F300DB2365 /* PortalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalView.swift; sourceTree = "<group>"; };
+		C0171F5F2761214B00DB2365 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
 		C03F8A2C276115DD000533D3 /* CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03F8A2E276115DD000533D3 /* CPaySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPaySDK.h; sourceTree = "<group>"; };
 		C03F8A2F276115DD000533D3 /* CPaySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = CPaySDK.docc; sourceTree = "<group>"; };
@@ -185,7 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				C0171F5D276118F300DB2365 /* PortalView.swift */,
-				C0171F5B276118EC00DB2365 /* NextViewController.swift */,
+				C0171F5B276118EC00DB2365 /* PortalViewController.swift */,
+				C0171F5F2761214B00DB2365 /* PortalViewModel.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -559,10 +562,11 @@
 			files = (
 				C0171F5E276118F300DB2365 /* PortalView.swift in Sources */,
 				C0171F5A276118CB00DB2365 /* CPayResult.swift in Sources */,
-				C0171F5C276118EC00DB2365 /* NextViewController.swift in Sources */,
+				C0171F5C276118EC00DB2365 /* PortalViewController.swift in Sources */,
 				C03F8A30276115DD000533D3 /* CPaySDK.docc in Sources */,
 				C0171F54276117E100DB2365 /* CPayMethodType.swift in Sources */,
 				C0171F56276117F500DB2365 /* CPayRequest.swift in Sources */,
+				C0171F602761214B00DB2365 /* PortalViewModel.swift in Sources */,
 				C0171F582761181800DB2365 /* CPayENVMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

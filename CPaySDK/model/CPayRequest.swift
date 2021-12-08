@@ -12,6 +12,16 @@ protocol CPayRequestBuilder {
     func build(type: CPayMethodType) -> CPayRequest
 }
 
+extension UIWindow {
+    static var key: UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.windows.first {$0.isKeyWindow}
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
+}
+
 public class CPayBuilder: CPayRequestBuilder {
         
     private var referenceId: String = ""
@@ -32,6 +42,7 @@ public class CPayBuilder: CPayRequestBuilder {
     public func build(type: CPayMethodType) -> CPayRequest {
         let request = CPayRequest()
         
+        request.mToken = token
         request.mAmount = amount
         request.mReference = referenceId
         request.mPaymentMethodType = type
@@ -150,18 +161,25 @@ public class CPayRequest: ReturnValDelegate {
     }
     
     //private var mOrder: CPayOrder = CPayOrder()
-    private var mViewController: NextViewController
+    private var mViewController: PortalViewController
     
     public init() {
         mPaymentMethodType = CPayMethodType.NONE
-        mViewController = NextViewController(method: mPaymentMethodType)
+        mViewController = PortalViewController(method: mPaymentMethodType)
     }
     
-    public func start(_ viewController: UIViewController, resultClosure: ResultClosure? = nil) {
+    public func start(_ resultClosure: ResultClosure? = nil) {
+        mViewController.payRequest = self
         mViewController.returnDelegate = self
-        viewController.present(mViewController, animated: true) {
-            self.resultClosure = resultClosure
+        
+        if let keyWindow = UIWindow.key {
+            let viewController = keyWindow.rootViewController!
+            
+            viewController.present(mViewController, animated: true) {
+                self.resultClosure = resultClosure
+            }
         }
         
     }
+    
 }

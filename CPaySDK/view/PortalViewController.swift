@@ -12,14 +12,15 @@ protocol ReturnValDelegate {
     func sendVal(_ result: CPayResult)
 }
 
-class NextViewController: UIViewController {
+class PortalViewController: UIViewController {
+    var payRequest: CPayRequest?
     var returnDelegate: ReturnValDelegate?
     var paymentMethod: CPayMethodType
-    var nextView: PortalView
+    var nextView: PortalView?
     
     init(method: CPayMethodType) {
         paymentMethod = CPayMethodType.NONE
-        nextView = PortalView(method: paymentMethod)
+        //nextView = PortalView(method: paymentMethod)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,6 +32,7 @@ class NextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nextView = PortalView(request: payRequest)
         let nextViewController = UIHostingController(rootView: nextView)
         let subView = nextViewController.view
         
@@ -48,8 +50,8 @@ class NextViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        if(returnDelegate != nil) {
-            returnDelegate?.sendVal(nextView.result)
+        if(returnDelegate != nil && nextView != nil) {
+            returnDelegate?.sendVal(nextView?.result ?? CPayResult(""))
         }
     }
 

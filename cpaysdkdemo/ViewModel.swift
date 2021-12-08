@@ -6,18 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
 import CPaySDK
-
-extension UIWindow {
-    static var key: UIWindow? {
-        if #available(iOS 13, *) {
-            return UIApplication.shared.windows.first {$0.isKeyWindow}
-        } else {
-            return UIApplication.shared.keyWindow
-        }
-    }
-}
 
 extension Dictionary {
     
@@ -56,31 +45,8 @@ class ViewModel: ObservableObject {
         return randomString
     }
     
-//    private func setupSDK(token: String, mode: Int) {
-//        CPayManager.setupTokenKey(token)
-//        CPayManager.setupMode(CPayMode.init(rawValue: mode) ?? CPayMode.UAT)
-//    }
-    
+   
     func requestOrder(token: String, mode: Int, reference: String, amount: Int, subject: String, body: String, currency: String, vendor: CPayMethodType, allowDuplicate: Bool, extra: Dictionary<String, String>) {
-        //self.setupSDK(token: token, mode: mode)
-//        mOrder.amount = String(amount)
-//        mOrder.referenceId = reference
-//        mOrder.subject = subject
-//        mOrder.body = body
-//        mOrder.currency = currency
-//        mOrder.vendor = vendor.rawValue
-//        mOrder.allowDuplicate = allowDuplicate
-//        mOrder.ipnUrl = "ipn.php"
-//        mOrder.callbackUrl = "citcon.com"
-//        mOrder.extra = extra.toJsonString()
-//        if let keyWindow = UIWindow.key {
-//            mOrder.controller = keyWindow.rootViewController!
-//        }                    // required for upop payment
-//        mOrder.scheme = "cpaydemo.citconpay.com"  // (required) your app scheme for alipay payment, set in the Info.plist
-//
-//        CPayManager.request(mOrder) { result in
-//            self.mOrderResult = result?.message ?? "" + String(result?.resultStatus ?? 0)
-//        }
         
         let cpayReq: CPayRequest = CPayBuilder()
             .token(token)
@@ -96,11 +62,10 @@ class ViewModel: ObservableObject {
             .extra(extra.toJsonString() ?? "")
             .build(type: vendor)
         
-        if let keyWindow = UIWindow.key {
-            cpayReq.start(keyWindow.rootViewController!) { retVal in
+        
+            cpayReq.start() { retVal in
                 print("return: \(retVal.result)\n")
             }
-        }
     }
     
 //    @objc func onOrderComplete(_ notification: NSNotification) {
