@@ -35,16 +35,8 @@ struct ContentView: View {
     
     private var currencies = ["USD", "CNY", "CAD", "HKD", "KRW", "IDR"]
     
-    private var vendors = ["upop", "wechatpay", "alipay", "alipay_hk", "kakaopay", "dana"]
-    
-    
-    enum ENV: Int, CaseIterable, Identifiable {
-        case DEV
-        case UAT
-        case PROD
-        
-        var id: Int { self.rawValue }
-    }
+    //private var vendors = ["upop", "wechatpay", "alipay", "alipay_hk", "kakaopay", "dana"]
+    private var vendors = [CPayMethodType.UPOP, CPayMethodType.WECHAT, CPayMethodType.ALI, CPayMethodType.ALI_HK, CPayMethodType.KAKAO, CPayMethodType.DANA]
     
     var body: some View {
         ZStack {
@@ -132,16 +124,17 @@ struct ContentView: View {
                             .padding(.trailing)
                         
                         Text("vendor").padding(.leading)
-                        Menu(LocalizedStringKey(vendors[vendorIndex])){
+                        Menu(LocalizedStringKey(vendors[vendorIndex].rawValue)){
                             ForEach(0..<vendors.count) { index in
                                 Button(action: {
                                     vendorIndex = index
                                 }) {
-                                    Text(LocalizedStringKey(vendors[index]))
+                                    Text(LocalizedStringKey(vendors[index].rawValue))
                                 }
-                                
+
                             }
                         }.menuStyle(BorderlessButtonMenuStyle())
+                        
                     }
                     
                     HStack {
@@ -197,14 +190,14 @@ struct ContentView: View {
                 
             }.onAppear {
                 print("ContentView appeared!")
-                viewModel.registerNotification()
+                //viewModel.registerNotification()
                 
                 //CPayManager.initSDK()
                 //CPayManager.setupMode(CPAY_MODE_UAT)
             }.onDisappear {
                 print("ContentView disappeared!")
                 
-                viewModel.unregisterNotification()
+                //viewModel.unregisterNotification()
                 
             }
         }

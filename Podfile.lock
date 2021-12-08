@@ -1,16 +1,26 @@
 PODS:
+  - Alamofire (5.4.4)
   - CPay (2.4.1)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
 
 DEPENDENCIES:
   - CPay
+  - Moya
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - CPay
+    - Moya
 
 SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   CPay: 0dc0e719bcb50867b9bbeb76c1c89e5ed6629657
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
 
-PODFILE CHECKSUM: 0c931e0240d43333ea222bc2ac539d42c630f80f
+PODFILE CHECKSUM: a5d18247ae30c69f3a1cca39e6fb65c4c9277824
 
 COCOAPODS: 1.11.2

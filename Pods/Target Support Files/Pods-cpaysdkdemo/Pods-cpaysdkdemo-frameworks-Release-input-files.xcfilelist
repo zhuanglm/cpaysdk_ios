@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-cpaysdkdemo/Pods-cpaysdkdemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/CPay/CPay.framework/CPay
