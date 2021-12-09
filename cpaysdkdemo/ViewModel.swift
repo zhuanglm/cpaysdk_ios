@@ -64,6 +64,7 @@ class ViewModel: ObservableObject {
         
         
             cpayReq.start() { retVal in
+                self.mOrderResult = retVal.result
                 print("return: \(retVal.result)\n")
             }
     }

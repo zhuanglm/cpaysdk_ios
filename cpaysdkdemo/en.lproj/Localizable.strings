@@ -12,6 +12,6 @@
 "amount" = "Amount";
 "duplicate" = "Duplicate";
 "currency" = "Currency";
-"vendor" = "Vendors";
+"vendor" = "Pay Type";
 "upop" = "UnionPay";
 "result" = "Result";

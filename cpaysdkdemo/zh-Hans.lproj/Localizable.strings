@@ -12,6 +12,6 @@
 "amount" = "金额";
 "duplicate" = "是否重复";
 "currency" = "币种";
-"vendor" = "支付网关";
+"vendor" = "支付类型";
 "upop" = "银联";
 "result" = "交易结果";

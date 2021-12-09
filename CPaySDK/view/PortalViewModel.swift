@@ -6,12 +6,21 @@
 //
 
 import Foundation
+import Combine
 import CPay
 
 
 class PortalViewModel: ObservableObject {
     var paymentRequest: CPayRequest?
-    @Published var mOrderResult: String = ""
+    var mOrderResult: String = ""
+    
+    let viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
+    
+    private var shouldDismissView = false {
+        didSet {
+            viewDismissalModePublisher.send(shouldDismissView)
+        }
+    }
     
     func startRequst(_ request: CPayRequest) {
         self.paymentRequest = request
@@ -33,9 +42,9 @@ class PortalViewModel: ObservableObject {
                 order.extra = request.mExtra
                 if let keyWindow = UIWindow.key {
                     order.controller = keyWindow.rootViewController!
-                }                   
+                }
                 order.scheme = "cpaydemo.citconpay.com"  // (required) your app scheme for alipay payment, set in the Info.plist
-        
+                
                 CPayManager.request(order) { result in
                     self.mOrderResult = result?.message ?? "" + String(result?.resultStatus ?? 0)
                 }
@@ -50,4 +59,20 @@ class PortalViewModel: ObservableObject {
         CPayManager.setupMode(CPayMode.init(rawValue: mode) ?? CPayMode.UAT)
     }
     
+    @objc func onOrderComplete(_ notification: NSNotification) {
+        let result = notification.object as! CPayCheckResult
+        //print("TransId: \(result.transactionId ?? "")\n Amount: \(result.amount ?? "")\n ref: \(result.referenceId ?? "")\n status: \(result.status ?? "")")
+        
+        self.mOrderResult = String(format: "status: %@  reference: %@ transaction: %@", result.status, result.referenceId, result.transactionId)
+        
+        self.shouldDismissView = true
+    }
+    
+    func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onOrderComplete), name: NSNotification.Name(kOrderPaymentFinishedNotification), object: nil)
+    }
+    
+    func unregisterNotification() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(kOrderPaymentFinishedNotification), object: nil)
+    }
 }

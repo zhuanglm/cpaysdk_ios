@@ -187,8 +187,7 @@ struct ContentView: View {
                 print("ContentView appeared!")
                 //viewModel.registerNotification()
                 
-                //CPayManager.initSDK()
-                //CPayManager.setupMode(CPAY_MODE_UAT)
+                
             }.onDisappear {
                 print("ContentView disappeared!")
                 

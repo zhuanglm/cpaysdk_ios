@@ -42,17 +42,24 @@ public struct PortalView: View {
             }
         }.onAppear {
             print("SDK PortalView appeared!")
-            //viewModel.registerNotification()
+            
+            viewModel.registerNotification()
+            
             if (request != nil) {
                 viewModel.startRequst(request!)
             }
-            //CPayManager.initSDK()
-            //CPayManager.setupMode(CPAY_MODE_UAT)
+            
+            
         }.onDisappear {
             print("SDK PortalView disappeared!")
             
-            //viewModel.unregisterNotification()
+            viewModel.unregisterNotification()
             
+        }.onReceive(viewModel.viewDismissalModePublisher) { shouldDismiss in
+            if shouldDismiss {
+                result?.result = viewModel.mOrderResult
+                self.presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }

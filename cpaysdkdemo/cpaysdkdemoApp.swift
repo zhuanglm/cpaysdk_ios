@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CPay
 
 @main
 struct cpaysdkdemoApp: App {
@@ -15,9 +16,9 @@ struct cpaysdkdemoApp: App {
         WindowGroup {
             ContentView().onOpenURL { url in
                 print("open URL is \(url)")
-//                CPayManager.processOpenUrl(UIApplication.shared, url: url) { result in
-//                    //NSLog(@"openURL result: %@ status: %li, message: %@, transaction id: %@", result.result, result.resultStatus, result.message, result.order.transactionId);
-//                }
+                CPayManager.processOpenUrl(UIApplication.shared, url: url) { result in
+                    //NSLog(@"openURL result: %@ status: %li, message: %@, transaction id: %@", result.result, result.resultStatus, result.message, result.order.transactionId);
+                }
             }
         }.onChange(of: scenePhase) { newScenePhase in
             switch newScenePhase {
