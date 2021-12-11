@@ -12,16 +12,6 @@ protocol CPayRequestBuilder {
     func build(type: CPayMethodType) -> CPayRequest
 }
 
-extension UIWindow {
-    static var key: UIWindow? {
-        if #available(iOS 13, *) {
-            return UIApplication.shared.windows.first {$0.isKeyWindow}
-        } else {
-            return UIApplication.shared.keyWindow
-        }
-    }
-}
-
 public class CPayBuilder: CPayRequestBuilder {
         
     private var referenceId: String = ""
@@ -117,7 +107,7 @@ public typealias ResultClosure = (CPayResult) -> Void
 
 public class CPayRequest: ReturnValDelegate {
     var mToken: String = ""
-    var mMode: CPayENVMode = CPayENVMode.UAT
+    var mEnvMode: CPayENVMode = CPayENVMode.UAT
         
     //UPI SDK
     var mPaymentMethodType: CPayMethodType = CPayMethodType.NONE
@@ -168,7 +158,7 @@ public class CPayRequest: ReturnValDelegate {
         mViewController = PortalViewController(method: mPaymentMethodType)
     }
     
-    public func start(_ resultClosure: ResultClosure? = nil) {
+    public func start(resultClosure: ResultClosure? = nil) {
         mViewController.payRequest = self
         mViewController.returnDelegate = self
         

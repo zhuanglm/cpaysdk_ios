@@ -37,27 +37,33 @@ public struct PortalView: View {
                     let value = opacity as Double
                     let paymentMethod = self.request?.mPaymentMethodType
                     result?.result = "payment: \(paymentMethod ?? CPayMethodType.NONE) value: \(value)"
+                    viewModel.unregisterNotification()
                     presentationMode.wrappedValue.dismiss()
                 }.padding()
             }
         }.onAppear {
             print("SDK PortalView appeared!")
             
-            viewModel.registerNotification()
+            //viewModel.registerNotification()
             
             if (request != nil) {
-                viewModel.startRequst(request!)
+                if(viewModel.isRequsted) {
+                    viewModel.inquire(request!)
+                } else {
+                    viewModel.startRequst(request!)
+                }
+            
             }
             
             
         }.onDisappear {
             print("SDK PortalView disappeared!")
             
-            viewModel.unregisterNotification()
+            //viewModel.unregisterNotification()
             
         }.onReceive(viewModel.viewDismissalModePublisher) { shouldDismiss in
             if shouldDismiss {
-                result?.result = viewModel.mOrderResult
+                result?.result = viewModel.orderResult
                 self.presentationMode.wrappedValue.dismiss()
             }
         }

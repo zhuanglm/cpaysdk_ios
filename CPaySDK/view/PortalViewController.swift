@@ -8,6 +8,34 @@
 import UIKit
 import SwiftUI
 
+extension UIWindow {
+    var visibleViewController: UIViewController? {
+        return UIWindow.getVisibleViewControllerFrom(self.rootViewController)
+    }
+
+    static func getVisibleViewControllerFrom(_ vc: UIViewController?) -> UIViewController? {
+        if let nc = vc as? UINavigationController {
+            return UIWindow.getVisibleViewControllerFrom(nc.visibleViewController)
+        } else if let tc = vc as? UITabBarController {
+            return UIWindow.getVisibleViewControllerFrom(tc.selectedViewController)
+        } else {
+            if let pvc = vc?.presentedViewController {
+                return UIWindow.getVisibleViewControllerFrom(pvc)
+            } else {
+                return vc
+            }
+        }
+    }
+    
+    static var key: UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.windows.first {$0.isKeyWindow}
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
+}
+
 protocol ReturnValDelegate {
     func sendVal(_ result: CPayResult)
 }
@@ -20,7 +48,6 @@ class PortalViewController: UIViewController {
     
     init(method: CPayMethodType) {
         paymentMethod = CPayMethodType.NONE
-        //nextView = PortalView(method: paymentMethod)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -42,10 +69,6 @@ class PortalViewController: UIViewController {
         addChild(nextViewController)
         nextViewController.didMove(toParent: self)
         view.addSubview(nextViewController.view)
-        
-        if(returnDelegate != nil) {
-            //returnDelegate?.sendVal(message: "zlm loaded")
-        }
 
     }
     

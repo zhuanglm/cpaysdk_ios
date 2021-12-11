@@ -24,7 +24,6 @@ extension Dictionary {
 }
 
 class ViewModel: ObservableObject {
-    //private var mOrder: CPayOrder = CPayOrder()
 
     let paymentMethod = CPayMethodType.ALI_HK
     @Published var mOrderResult: String = ""
@@ -68,20 +67,5 @@ class ViewModel: ObservableObject {
                 print("return: \(retVal.result)\n")
             }
     }
-    
-//    @objc func onOrderComplete(_ notification: NSNotification) {
-//        let result = notification.object as! CPayCheckResult
-//        //print("TransId: \(result.referenceId)\n Amount: \(result.amount)\n code: \(result.code)\n status: \(result.status)")
-//
-//        self.mOrderResult = String(format: "status: %@  reference: %@ transaction: %@", result.status, result.referenceId, result.transactionId)
-//    }
-    
-//    func registerNotification() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(onOrderComplete), name: NSNotification.Name(kOrderPaymentFinishedNotification), object: nil)
-//    }
-//
-//    func unregisterNotification() {
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(kOrderPaymentFinishedNotification), object: nil)
-//    }
-    
+        
 }

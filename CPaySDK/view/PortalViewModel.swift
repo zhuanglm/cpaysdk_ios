@@ -12,7 +12,8 @@ import CPay
 
 class PortalViewModel: ObservableObject {
     var paymentRequest: CPayRequest?
-    var mOrderResult: String = ""
+    var orderResult: String = ""
+    var isRequsted = false
     
     let viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
     
@@ -27,7 +28,9 @@ class PortalViewModel: ObservableObject {
         
         switch request.mPaymentMethodType {
             case CPayMethodType.ALI_HK, CPayMethodType.ALI, CPayMethodType.DANA, CPayMethodType.KAKAO, CPayMethodType.WECHAT, CPayMethodType.UPOP:
-                self.setupSDK(token: request.mToken, mode: request.mMode.rawValue)
+                self.setupSDK(token: request.mToken, mode: request.mEnvMode.rawValue)
+                self.isRequsted = true
+                registerNotification()
                 
                 let order = CPayOrder()
                 order.amount = String(request.mAmount)
@@ -41,16 +44,35 @@ class PortalViewModel: ObservableObject {
                 order.callbackUrl = "citcon.com"
                 order.extra = request.mExtra
                 if let keyWindow = UIWindow.key {
-                    order.controller = keyWindow.rootViewController!
+                    order.controller = UIWindow.getVisibleViewControllerFrom(keyWindow.rootViewController)
                 }
+                
                 order.scheme = "cpaydemo.citconpay.com"  // (required) your app scheme for alipay payment, set in the Info.plist
                 
                 CPayManager.request(order) { result in
-                    self.mOrderResult = result?.message ?? "" + String(result?.resultStatus ?? 0)
+                    self.orderResult = result?.message ?? "" + String(result?.resultStatus ?? 0)
+                    self.isRequsted = false
                 }
                 
             default:
-                print( "default case")
+                print( "default start case")
+        }
+    }
+    
+    func inquire(_ request: CPayRequest) {
+        if(self.paymentRequest != nil && self.paymentRequest?.mReference == request.mReference) {
+            switch request.mPaymentMethodType {
+                case CPayMethodType.UPOP:
+                    //in case of union pay has not been installed
+                    CPayManager.inquireResult(byRef: request.mReference, currency: request.mCurrency, method: "real", vendor: request.mPaymentMethodType.rawValue, completion: {result in
+                        if(result?.transactionId != nil) {
+                            self.returnResult(result: result!)
+                        }
+                        
+                    })
+                default:
+                    print( "default inquire case")
+            }
         }
     }
     
@@ -59,13 +81,17 @@ class PortalViewModel: ObservableObject {
         CPayManager.setupMode(CPayMode.init(rawValue: mode) ?? CPayMode.UAT)
     }
     
+    private func returnResult(result: CPayCheckResult) {
+        self.orderResult = String(format: "status: %@  reference: %@ transaction: %@", result.status, result.referenceId, result.transactionId)
+        
+        self.unregisterNotification()
+        self.shouldDismissView = true
+    }
+    
     @objc func onOrderComplete(_ notification: NSNotification) {
         let result = notification.object as! CPayCheckResult
-        //print("TransId: \(result.transactionId ?? "")\n Amount: \(result.amount ?? "")\n ref: \(result.referenceId ?? "")\n status: \(result.status ?? "")")
         
-        self.mOrderResult = String(format: "status: %@  reference: %@ transaction: %@", result.status, result.referenceId, result.transactionId)
-        
-        self.shouldDismissView = true
+        self.returnResult(result: result)
     }
     
     func registerNotification() {
