@@ -17,6 +17,8 @@ public enum CPayMethodType: String, CaseIterable, Identifiable {
     case ALI_HK = "alipay_hk"
     case KAKAO = "kakaopay"
     case DANA = "dana"
+    case PAYPAL = "paypal"
+    case VENMO = "venmo"
     case UNKNOWN = "credit card"
     case NONE = "none"
 }

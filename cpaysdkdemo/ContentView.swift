@@ -11,7 +11,6 @@ import CPaySDK
 struct ContentView: View {
     @State var envIndex: Int = 1
     @State var tokenIndex: Int = 0
-    @State var referenceID: String = ""
     @State var orderSubject: String = "test subject"
     @State var orderBody: String = "test data"
     @State var extKey: String = "reference2"
@@ -36,7 +35,7 @@ struct ContentView: View {
     private var currencies = ["USD", "CNY", "CAD", "HKD", "KRW", "IDR"]
     
     //private var vendors = ["upop", "wechatpay", "alipay", "alipay_hk", "kakaopay", "dana"]
-    private var vendors = [CPayMethodType.UPOP, CPayMethodType.WECHAT, CPayMethodType.ALI, CPayMethodType.ALI_HK, CPayMethodType.KAKAO, CPayMethodType.DANA]
+    private var vendors = [CPayMethodType.UPOP, CPayMethodType.WECHAT, CPayMethodType.ALI, CPayMethodType.ALI_HK, CPayMethodType.KAKAO, CPayMethodType.DANA, CPayMethodType.UNKNOWN, CPayMethodType.PAYPAL, CPayMethodType.VENMO]
     
     var body: some View {
         ZStack {
@@ -51,26 +50,8 @@ struct ContentView: View {
                     }).padding()
                         .pickerStyle(SegmentedPickerStyle())
                     
-                    Menu(tokens[tokenIndex]){
-                        ForEach(0..<tokens.count) { index in
-                            Button(action: {
-                                tokenIndex = index
-                            }) {
-                                Text(tokens[index])
-                            }
-                            
-                        }
-                    }.menuStyle(BorderlessButtonMenuStyle())
-                    
-                    HStack {
-                        Text("reference:").padding()
-                        TextField("", text: $referenceID )
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-                    }
-                    
                     Button(action: {
-                        referenceID = viewModel.randomString(16)
+                        viewModel.mReference = viewModel.randomString(16)
                     }) {
                         Text("regenerate")
                             .font(.body)
@@ -82,31 +63,104 @@ struct ContentView: View {
                     }
                     
                     HStack {
-                        Text("subject:").padding()
-                        TextField("", text: $orderSubject )
+                        Text("reference:").padding()
+                        TextField("", text: $viewModel.mReference )
                             .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding([.trailing])
+                            .padding()
                     }
                     
-                    HStack {
-                        Text("body:").padding([.leading,.trailing])
-                        TextField("", text: $orderBody )
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding([.trailing])
-                    }
                     
-                    HStack {
-                        Text("amount").padding(.leading)
-                        TextField("amount", text: Binding(
-                            get: { String(amount) },
-                            set: { amount = Int($0) ?? 0 }
-                        )).padding(.leading)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 100)
-                        Toggle(isOn: $allowDuplicate) {
-                            Text("duplicate")
-                        }.padding(.leading, 20)
-                            .padding(.trailing)
+                    if(vendors[vendorIndex] == .UNKNOWN || vendors[vendorIndex] == .PAYPAL || vendors[vendorIndex] == .VENMO) {
+                        
+                        Toggle(isOn: $viewModel.mIs3DS) {
+                            Text("threeds")
+                        }.padding([.leading,.trailing])
+                        
+                        Button(action: {
+                            viewModel.getAccessToken()
+                        }) {
+                            Text("new tokens")
+                                .font(.body)
+                                .padding(.horizontal, 60.0)
+                                .padding(.vertical, 8.0)
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .cornerRadius(25)
+                        }.alert(isPresented: $viewModel.mIsPresentAlert, content: {
+                            Alert(title: Text(viewModel.mErrorMsg?.status ?? "loading"), message: Text("\(viewModel.mErrorMsg?.data.message ?? "") -- \(viewModel.mErrorMsg?.data.code ?? "")"), dismissButton: .default(Text("OK")))
+                        })
+                        
+                        
+                        if(viewModel.mIsLoading) {
+                            ProgressView()
+                            Text("loading...").padding()
+                        }
+                        
+                        Text("access token:  " + viewModel.mAccessToken).multilineTextAlignment(.leading)
+                            .lineSpacing(2).lineLimit(3)
+                        
+                        Text("charge token:  " + viewModel.mChargeToken).multilineTextAlignment(.leading)
+                            .lineSpacing(2).lineLimit(1)
+                            .padding(.top, 5)
+                        
+                    } else {
+                        
+                        Menu(tokens[tokenIndex]){
+                            ForEach(0..<tokens.count) { index in
+                                Button(action: {
+                                    tokenIndex = index
+                                }) {
+                                    Text(tokens[index])
+                                }
+                                
+                            }
+                        }.menuStyle(BorderlessButtonMenuStyle())
+                            .padding()
+                        
+                        HStack {
+                            Text("subject:").padding()
+                            TextField("", text: $orderSubject )
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding([.trailing])
+                        }
+                        
+                        HStack {
+                            Text("body:").padding([.leading,.trailing])
+                            TextField("", text: $orderBody )
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding([.trailing])
+                        }
+                        
+                        HStack {
+                            Text("amount").padding(.leading)
+                            TextField("amount", text: Binding(
+                                get: { String(amount) },
+                                set: { amount = Int($0) ?? 0 }
+                            )).padding(.leading)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .frame(width: 100)
+                            Toggle(isOn: $allowDuplicate) {
+                                Text("duplicate")
+                            }.padding(.leading, 20)
+                                .padding(.trailing)
+                        }
+                        
+                        HStack {
+                            VStack {
+                                Text("Ext - key").padding(.horizontal, 30.0)
+                                TextField("key", text: $extKey).padding(.leading)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: 150)
+                            }
+                            
+                            VStack {
+                                Text("Ext - value").padding(.horizontal, 60.0)
+                                TextField("value", text: $extValue).padding(.leading)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: 150)
+                            }
+                        }
+                        
                     }
                     
                     HStack {
@@ -131,33 +185,21 @@ struct ContentView: View {
                                 }) {
                                     Text(LocalizedStringKey(vendors[index].rawValue))
                                 }
-
+                                
                             }
                         }.menuStyle(BorderlessButtonMenuStyle())
                         
                     }
-                    
-                    HStack {
-                        VStack {
-                            Text("Ext - key").padding(.horizontal, 30.0)
-                            TextField("key", text: $extKey).padding(.leading)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: 150)
-                        }
-                        
-                        VStack {
-                            Text("Ext - value").padding(.horizontal, 60.0)
-                            TextField("value", text: $extValue).padding(.leading)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: 150)
-                        }
-                    }
-                    
                 }
+                
                 
                 Group {
                     Button(action: {
-                        viewModel.requestOrder(token: tokens[tokenIndex], mode: envIndex, reference: referenceID, amount: amount, subject: orderSubject, body: orderBody, currency: currencies[currencyIndex], vendor: vendors[vendorIndex], allowDuplicate: allowDuplicate, extra: [extKey: extValue])
+                        if(vendors[vendorIndex] == .UNKNOWN || vendors[vendorIndex] == .PAYPAL || vendors[vendorIndex] == .VENMO) {
+                            viewModel.requestOrder(mode: envIndex, vendor: vendors[vendorIndex])
+                        } else {
+                            viewModel.requestOrder(token: tokens[tokenIndex], mode: envIndex, amount: amount, subject: orderSubject, body: orderBody, currency: currencies[currencyIndex], vendor: vendors[vendorIndex], allowDuplicate: allowDuplicate, extra: [extKey: extValue])
+                        }
                         
                     }) {
                         Text("new_payment")
@@ -169,11 +211,11 @@ struct ContentView: View {
                             .cornerRadius(25)
                     }.padding()
                     
-//                    Button("ttt") {
-//                                self.isPresented = true
-//                            }.fullScreen(isPresented: $isPresented, content: {
-//                                NextView()
-//                            })
+                    //                    Button("ttt") {
+                    //                                self.isPresented = true
+                    //                            }.fullScreen(isPresented: $isPresented, content: {
+                    //                                NextView()
+                    //                            })
                     
                     Text("result").padding(.leading)
                     
@@ -197,7 +239,6 @@ struct ContentView: View {
         }
     }
 }
-
 
 
 struct ContentView_Previews: PreviewProvider {

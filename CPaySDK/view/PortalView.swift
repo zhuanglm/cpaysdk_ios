@@ -31,15 +31,21 @@ public struct PortalView: View {
                 Slider(value: $opacity, in: 0...1)
                     .padding()
                 
-                ProgressView()
+                if(viewModel.mIsLoading) {
+                    ProgressView()
+                    Text("loading...").padding()
+                }
                 
-                Button("Done") {
+                Button("Cancel") {
                     let value = opacity as Double
                     let paymentMethod = self.request?.mPaymentMethodType
                     result?.result = "payment: \(paymentMethod ?? CPayMethodType.NONE) value: \(value)"
                     viewModel.unregisterNotification()
                     presentationMode.wrappedValue.dismiss()
                 }.padding()
+                    .alert(isPresented: $viewModel.mIsPresentAlert, content: {
+                        Alert(title: Text(viewModel.mErrorMsg?.status ?? "loading"), message: Text("\(viewModel.mErrorMsg?.data.message ?? "") -- \(viewModel.mErrorMsg?.data.code ?? "")"), dismissButton: .default(Text("OK")))
+                    })
             }
         }.onAppear {
             print("SDK PortalView appeared!")
@@ -63,6 +69,7 @@ public struct PortalView: View {
             
         }.onReceive(viewModel.viewDismissalModePublisher) { shouldDismiss in
             if shouldDismiss {
+                //return CPayResult
                 result?.result = viewModel.orderResult
                 self.presentationMode.wrappedValue.dismiss()
             }

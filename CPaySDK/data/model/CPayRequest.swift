@@ -12,6 +12,54 @@ protocol CPayRequestBuilder {
     func build(type: CPayMethodType) -> CPayRequest
 }
 
+public class DropInBuilder: CPayRequestBuilder {
+    private var chargeToken = ""
+    private var accessToken = ""
+    private var referenceId = ""
+    private var consumerId = ""
+    private var mode = CPayENVMode.UAT
+    
+    public init() {
+    }
+    
+    public func build(type: CPayMethodType) -> CPayRequest {
+        let request = CPayRequest()
+        request.mPaymentMethodType = type
+        
+        request.mChargeToken = chargeToken
+        request.mAccessToken = accessToken
+        request.mReference = referenceId
+        request.mConsumerID = consumerId
+        
+        return request
+    }
+    
+    public func accessToken(_ token: String) -> DropInBuilder {
+        self.accessToken = token
+        return self
+    }
+    
+    public func envMode(_ mode: CPayENVMode) -> DropInBuilder {
+        self.mode = mode
+        return self
+    }
+    
+    public func chargeToken(_ token: String) -> DropInBuilder {
+        self.chargeToken = token
+        return self
+    }
+    
+    public func reference(_ ref: String) -> DropInBuilder {
+        self.referenceId = ref
+        return self
+    }
+    
+    public func consumer(_ id: String) -> DropInBuilder {
+        self.consumerId = id
+        return self
+    }
+}
+
 public class CPayBuilder: CPayRequestBuilder {
         
     private var referenceId: String = ""
@@ -114,7 +162,7 @@ public class CPayRequest: ReturnValDelegate {
     var mAccessToken: String = ""
     var mChargeToken: String = ""
     var mReference: String = ""
-    var mConsumerID: String = ""
+    var mConsumerID: String = "123"
     
     //CPaySDK CPayOrder
     var  mAmount: String = ""

@@ -12,6 +12,7 @@
 "amount" = "Amount";
 "duplicate" = "Duplicate";
 "currency" = "Currency";
-"vendor" = "Pay Type";
+"vendor" = "Pay by";
 "upop" = "UnionPay";
 "result" = "Result";
+"threeds" = "3DS verification";

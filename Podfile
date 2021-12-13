@@ -10,5 +10,7 @@ end
 
 target 'CPaySDK' do
     pod 'CPay'
+    pod 'BraintreeDropIn'
+    pod 'Moya'
 end
 
