@@ -5,7 +5,7 @@ platform :ios, 14
 use_frameworks!
 
 target 'cpaysdkdemo' do
-  pod 'Moya'
+  # pod 'Moya'
 end
 
 target 'CPaySDK' do

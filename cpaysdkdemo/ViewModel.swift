@@ -7,7 +7,6 @@
 
 import Foundation
 import CPaySDK
-import Moya
 
 extension Dictionary {
     
@@ -56,67 +55,37 @@ class ViewModel: ObservableObject {
         return randomString
     }
     
-    func getAccessToken() {
-        let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
-        let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)
-        let provider = MoyaProvider<RequestApi>(plugins: [networkLogger])
-        
+    func applyToken() {
         self.mIsLoading = true
-        provider.request(.accessToken) { (result) in
-            switch result {
-            case .success(let response):
-                // Parsing the data:
-                do {
-                    let parsedData = try self.mDecoder.decode(CitconApiResponse<AccessToken>.self, from: response.data)
-                    
-                    if (parsedData.status == "success") {
-                        self.mAccessToken = parsedData.data.access_token
-                        //self.getReference()
-                        self.getChargeToken(provider)
-                    }
-                } catch {
-                    self.mIsLoading = false
-                    self.mErrorMsg = try! self.mDecoder.decode(CitconApiResponse<ErrorMessage>.self, from: response.data)
-                    
-                    if (self.mErrorMsg?.status == "fail") {
-                        self.mIsPresentAlert = true
-                    }
-                }
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-        }
-    }
-    
-    private func getChargeToken(_ provider: MoyaProvider<RequestApi>) {
-        provider.request(.chargeToken(self.mAccessToken, self.mReference)) { (result) in
-            self.mIsLoading = false
-            switch result {
-            case .success(let response):
-                // Parsing the data:
-                do {
-                    let parsedData = try self.mDecoder.decode(CitconApiResponse<ChargeToken>.self, from: response.data)
-                    
-                    if (parsedData.status == "success") {
-                        self.mChargeToken = parsedData.data.charge_token
-                    }
-                } catch {
-                    //print(error)
-                    self.mErrorMsg = try! self.mDecoder.decode(CitconApiResponse<ErrorMessage>.self, from: response.data)
-
-                    if (self.mErrorMsg?.status == "fail") {
-                        self.mIsPresentAlert = true
-                    }
-                }
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-        }
         
+        let api = UPIAPI()
+        
+        api.getAccessToken { response in
+            if response is CitconApiResponse<AccessToken> {
+                let at = response as! CitconApiResponse<AccessToken>
+                self.mAccessToken = at.data.access_token
+                
+                api.getChargeToken(self.mAccessToken, self.mReference) { response in
+                    self.mIsLoading = false
+                    
+                    if response is CitconApiResponse<ChargeToken> {
+                        let ct = response as! CitconApiResponse<ChargeToken>
+                        self.mChargeToken = ct.data.charge_token
+                    } else {
+                        self.mIsLoading = false
+                        self.mErrorMsg = response as? CitconApiResponse<ErrorMessage>
+                        
+                        self.mIsPresentAlert = true
+                    }
+                }
+                
+            } else {
+                self.mIsLoading = false
+                self.mErrorMsg = response as? CitconApiResponse<ErrorMessage>
+                
+                self.mIsPresentAlert = true
+            }
+        }
     }
    
     func requestOrder(token: String, mode: Int, amount: Int, subject: String, body: String, currency: String, vendor: CPayMethodType, allowDuplicate: Bool, extra: Dictionary<String, String>) {

@@ -14,13 +14,24 @@ import Moya
 class PortalViewModel: ObservableObject {
     var paymentRequest: CPayRequest?
     var orderResult: String = ""
-    var mClientToken: String?
     var isRequsted = false
     let mDecoder = JSONDecoder()
     var mErrorMsg: CitconApiResponse<ErrorMessage>? = nil
     
     @Published var mIsLoading = false
     @Published var mIsPresentAlert = false
+    
+//    private(set) var mClientToken: String? {
+//        didSet {
+//            if let keyWindow = UIWindow.key {
+//                self.showDropIn(clientTokenOrTokenizationKey: self.mClientToken!, viewController:
+//                                    UIWindow.getVisibleViewControllerFrom(keyWindow.rootViewController)!)
+//            }
+//        }
+//    }
+    
+    let upiConfig = UPIAPI()
+   
     
     let viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
     
@@ -37,7 +48,7 @@ class PortalViewModel: ObservableObject {
             if (error != nil) {
                 print("ERROR")
         } else if (result?.isCanceled == true) {
-                print("CANCELED")
+            self.returnResult(result: "canceled")
             } else if let result = result {
                 // Use the BTDropInResult properties to update your UI
                 // result.paymentMethodType
@@ -84,47 +95,31 @@ class PortalViewModel: ObservableObject {
                 }
                 
             case .UNKNOWN, .VENMO, .PAYPAL:
-                getClientToken()
+                if (paymentRequest != nil) {
+                    //getClientToken()
+                    self.mIsLoading = true
+                    upiConfig.getClientToken(paymentRequest!) { response in
+                        self.mIsLoading = false
+                        if response is CitconApiResponse<LoadedConfig> {
+                            let config = response as! CitconApiResponse<LoadedConfig>
+                            if let keyWindow = UIWindow.key {
+                                self.showDropIn(clientTokenOrTokenizationKey: config.data.payment.client_token, viewController:
+                                                    UIWindow.getVisibleViewControllerFrom(keyWindow.rootViewController)!)
+                            }
+                        } else {
+                            self.mErrorMsg = response as? CitconApiResponse<ErrorMessage>
+                            
+                            self.mIsPresentAlert = true
+                        }
+
+                    }
+                }
                                 
             default:
                 print( "default start case")
         }
     }
     
-    func getClientToken() {
-        let loggerConfig = NetworkLoggerPlugin.Configuration(logOptions: .verbose)
-        let networkLogger = NetworkLoggerPlugin(configuration: loggerConfig)
-        let provider = MoyaProvider<RequestApi>(plugins: [networkLogger])
-        
-        self.mIsLoading = true
-        provider.request(.loadConfig(self.paymentRequest!.mAccessToken, self.paymentRequest!.mConsumerID)) { (result) in
-            switch result {
-                case .success(let response):
-                    // Parsing the data:
-                do {
-                    let parsedData = try self.mDecoder.decode(CitconApiResponse<LoadedConfig>.self, from: response.data)
-                    
-                    if (parsedData.status == "success") {
-                        self.mClientToken = parsedData.data.payment.client_token
-                        if let keyWindow = UIWindow.key {
-                            self.showDropIn(clientTokenOrTokenizationKey: self.mClientToken!, viewController:
-                                        UIWindow.getVisibleViewControllerFrom(keyWindow.rootViewController)!)
-                        }
-                    }
-                } catch {
-                    self.mIsLoading = false
-                    self.mErrorMsg = try! self.mDecoder.decode(CitconApiResponse<ErrorMessage>.self, from: response.data)
-                    
-                    if (self.mErrorMsg?.status == "fail") {
-                        self.mIsPresentAlert = true
-                    }
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
     
     func inquire(_ request: CPayRequest) {
         if(self.paymentRequest != nil && self.paymentRequest?.mReference == request.mReference) {
@@ -157,6 +152,13 @@ class PortalViewModel: ObservableObject {
     
     private func returnResult(result: BTDropInResult) {
         self.orderResult = String(format: "status: %@\n  nonce: ", result.paymentDescription) + result.paymentMethod!.nonce
+        
+        self.unregisterNotification()
+        self.shouldDismissView = true
+    }
+    
+    private func returnResult(result: String) {
+        self.orderResult = result
         
         self.unregisterNotification()
         self.shouldDismissView = true

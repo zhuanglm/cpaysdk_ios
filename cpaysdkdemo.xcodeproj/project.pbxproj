@@ -32,9 +32,9 @@
 		C0E19673271F2182008BC85C /* cpaysdkdemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E19672271F2182008BC85C /* cpaysdkdemoUITestsLaunchTests.swift */; };
 		C0E196812721FC48008BC85C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0E196832721FC48008BC85C /* Localizable.strings */; };
 		C0E196862722360E008BC85C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E196852722360D008BC85C /* ViewModel.swift */; };
-		C0FB030B2766C67700A1E963 /* MoyaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB030A2766C67700A1E963 /* MoyaClient.swift */; };
 		C0FB03112767C54100A1E963 /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB03102767C54100A1E963 /* RequestAPI.swift */; };
 		C0FB03122767D0F600A1E963 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB030C2766C68600A1E963 /* Response.swift */; };
+		C0FEC0E027692D2900F978F2 /* UPIAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEC0DF27692D2900F978F2 /* UPIAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,9 +124,9 @@
 		C0E196842721FC58008BC85C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C0E196852722360D008BC85C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C0ECF8FC2729AEE100FDE765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		C0FB030A2766C67700A1E963 /* MoyaClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaClient.swift; sourceTree = "<group>"; };
 		C0FB030C2766C68600A1E963 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		C0FB03102767C54100A1E963 /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
+		C0FEC0DF27692D2900F978F2 /* UPIAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPIAPI.swift; sourceTree = "<group>"; };
 		E2DD11F21230DCB3F5FDA049 /* Pods_CPaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -210,6 +210,7 @@
 				C0171F572761181800DB2365 /* CPayENVMode.swift */,
 				C0171F55276117F500DB2365 /* CPayRequest.swift */,
 				C0171F53276117E100DB2365 /* CPayMethodType.swift */,
+				C0FEC0DF27692D2900F978F2 /* UPIAPI.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -264,7 +265,6 @@
 		C0E19654271F217E008BC85C /* cpaysdkdemo */ = {
 			isa = PBXGroup;
 			children = (
-				C0FB030A2766C67700A1E963 /* MoyaClient.swift */,
 				C0ECF8FC2729AEE100FDE765 /* Info.plist */,
 				C0E19655271F217E008BC85C /* cpaysdkdemoApp.swift */,
 				C0E19657271F217E008BC85C /* ContentView.swift */,
@@ -602,6 +602,7 @@
 				C0171F602761214B00DB2365 /* PortalViewModel.swift in Sources */,
 				C0FB03112767C54100A1E963 /* RequestAPI.swift in Sources */,
 				C0171F582761181800DB2365 /* CPayENVMode.swift in Sources */,
+				C0FEC0E027692D2900F978F2 /* UPIAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +618,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0FB030B2766C67700A1E963 /* MoyaClient.swift in Sources */,
 				C0E19658271F217E008BC85C /* ContentView.swift in Sources */,
 				C0E196862722360E008BC85C /* ViewModel.swift in Sources */,
 				C0E19656271F217E008BC85C /* cpaysdkdemoApp.swift in Sources */,

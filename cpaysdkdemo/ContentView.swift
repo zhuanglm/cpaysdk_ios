@@ -77,7 +77,8 @@ struct ContentView: View {
                         }.padding([.leading,.trailing])
                         
                         Button(action: {
-                            viewModel.getAccessToken()
+                            //viewModel.getAccessToken()
+                            viewModel.applyToken()
                         }) {
                             Text("new tokens")
                                 .font(.body)
