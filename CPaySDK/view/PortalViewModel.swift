@@ -126,7 +126,7 @@ class PortalViewModel: ObservableObject {
             switch request.mPaymentMethodType {
                 case CPayMethodType.UPOP:
                     //in case of union pay has not been installed
-                    CPayManager.inquireResult(byRef: request.mReference, currency: request.mCurrency, method: "real", vendor: request.mPaymentMethodType.rawValue, completion: {result in
+                    CPayManager.inquireResult(byRef: request.mReference, currency: request.mCurrency, method: "real", vendor: request.mPaymentMethodType.rawValue,isAccelerated: false, completion: {result in
                         if(result?.transactionId != nil) {
                             self.returnResult(result: result!)
                         }

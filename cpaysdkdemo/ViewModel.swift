@@ -26,7 +26,7 @@ extension Dictionary {
 class ViewModel: ObservableObject {
     var mErrorMsg: CitconApiResponse<ErrorMessage>? = nil
     let mDecoder = JSONDecoder()
-    let paymentMethod = CPayMethodType.ALI_HK
+    let paymentMethod = CPayMethodType.NONE
     @Published var mOrderResult: String = ""
     @Published var mIsLoading = false
     @Published var mIsPresentAlert = false
